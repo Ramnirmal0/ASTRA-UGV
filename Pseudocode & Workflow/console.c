@@ -1,0 +1,19 @@
+begin{
+	onclick_event(button){
+		SUART.Serial.out(console_key);
+		Serial.print(log_info);
+	}
+	ack=Serial.read();
+	if(ack==0)
+	{
+		Serial.print(success);
+	}
+	else if(ack==1)
+	{
+		onclick_event(button);
+	}
+	if(serial.available()){
+		data=Serial.read();
+		Serial.print(log,data);
+	}
+}
